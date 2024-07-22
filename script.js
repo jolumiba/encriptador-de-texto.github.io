@@ -1,22 +1,56 @@
+function validar__Texto(texto) {
+    //Validamos el texto requerido para que sean solo minúsculas y espacios
+    //
+    const regex = /^[a-z\s]+$/;
+    return regex.test(texto);
+}
+
+function mostrar__Error(message) {
+    document.getElementById("mensaje_Error").textContent = message;
+}
+
+function limpiar__Error() {
+    document.getElementById("mensaje_Error").textContent = "";
+}
+
+
 function encriptar__Texto() {
-    var input = document.getElementById("ingreso_Texto").value;
-    var output = "";
-    for (var i = 0; i < input.length; i++) {
-      output += String.fromCharCode(input.charCodeAt(i) + 1); // Cifrado simple
+    var texto = document.getElementById("ingreso_Texto").value;
+    
+    if (!validar__Texto(texto)) {
+        mostrar__Error("El texto solo debe contener letras minúsculas y espacios...");
+        return;
     }
+    limpiar__Error();
+
+    // Se pasa el texto ingresado a la variable output para reemplazar las vocales de acuerdo
+    // a lo requerido por el encriptado
+
+    let output = texto
+        .replace(/e/g, "enter")
+        .replace(/i/g, "imes")
+        .replace(/a/g, "ai")
+        .replace(/o/g, "ober")
+        .replace(/u/g, "ufat");
     document.getElementById("salida_Texto").value = output;
+
+}
+  
+function desencriptar__Texto() {
+        
+    // Se pasa el texto de salida  ingresado a la variable output para reemplazar las letras de acuerdo
+    // a lo requerido por el desencriptado
+    let output = document.getElementById("salida_Texto").value
+        .replace(/enter/g, "e")
+        .replace(/imes/g, "i")
+        .replace(/ai/g, "a")
+        .replace(/ober/g, "o")
+        .replace(/ufat/g, "u");
+    document.getElementById("salida_Texto").value = output;
+
   }
   
-  function desencriptar__Texto() {
-    var input = document.getElementById("salida_Texto").value;
-    var output = "";
-    for (var i = 0; i < input.length; i++) {
-      output += String.fromCharCode(input.charCodeAt(i) - 1); // Decifrado simple
-    }
-    document.getElementById("salida_Texto").value = output;
-  }
-  
-  function copiar__Texto() {
+function copiar__Texto() {
     var output = document.getElementById("salida_Texto");
     output.select();
     output.setSelectionRange(0, 99999); /* para dispositivos móviles */
