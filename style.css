@@ -1,84 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluir el padding y borde en el ancho total */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #1a1818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    margin: 0;
-
-  }
-
-  .titulo {
-    text-align: center;
-    color:#f9f9fa;
-    -webkit-text-stroke: 1.2px red; /* Ancho del borde y color */
-    /*text-stroke: 1px red; /* Ancho del borde y color */
-  }
-  
-  .container {
-    width: 80%;
-    max-width: 600px;
-    background-color: #b7a0a0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     background-image: url('fondo.jpeg');
-    background-size: cover; /* La imagen se ajusta para cubrir todo el fondo */
-    background-position: center; /* La imagen se centra en el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-  }
-  
-  textarea, button {
-    display: block;
-    width: 100%;
+.titulo {
+    text-align: center;
+    color: #f9f9fa;
+    -webkit-text-stroke: 1.5px rgba(47, 0, 255, 0.452); /* Ancho del borde y color */
+}
+
+button {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    resize: none;
-    background-color: rgba(184, 180, 180, 0.5);
-
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    /*height: 100%; /* Ocupa el 100% de la altura del contenedor */
-    border: none; /* Quita el borde del textarea */
-    /*resize: none; /* Evita que el usuario pueda redimensionar el textarea */
-    /*padding: 5px; /* Ajusta el espacio interno dentro del textarea (opcional) */
-    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
-    /*font-size: 16px; /* Tamaño de fuente deseado */
-    /*line-height: 1.5; /* Altura de línea deseada */
-    
-  }
-
-  ::placeholder {
-    color: black; /* Cambia el color del placeholder a gris claro */
-    font-style: italic; /* Opcional: estilo de fuente itálica */
-  }
-
-   
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    background-color: rgba(94, 148, 199, 1);
+    color: #f3f3f3;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between; /* Espacio entre botones */
+    align-items: center; /* Centra verticalmente los botones */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: 10px; /* Espacio superior entre secciones */
+}
+
+.presentacion {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(20, 82, 18, 0.5);
+    border-radius: 5px;
+    display: flex;
+    /*flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre las secciones */
+}
+
+.seccion_Ingreso {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+    overflow-y: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Opcional: configuración de fuente para textarea */
+    font-size: 14px; /* Opcional: tamaño de fuente para textarea */
+}
+
+::placeholder { 
+    color: rgb(138, 125, 125);
+    font-style: italic;
+}
+
+/*cambiar el color al pasar el cursor por el boton*/
+button:hover {
     background-color: #0056b3;
-  }
-  
-  button:active {
-    transform: translateY(1px);
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  
+}
+
+footer{
+    background-color: #1a1818;
+    color: #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px; /* Opcional: tamaño de fuente para textarea */
+}
