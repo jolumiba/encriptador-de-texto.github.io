@@ -6,15 +6,31 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+
+  }
+
+  .titulo {
+    text-align: center;
+    color:#f9f9fa;
+    -webkit-text-stroke: 1.2px red; /* Ancho del borde y color */
+    /*text-stroke: 1px red; /* Ancho del borde y color */
   }
   
   .container {
     width: 80%;
     max-width: 600px;
-    background-color: #fff;
+    background-color: #b7a0a0;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    margin: 0;
+    padding: 0;
+    background-image: url('fondo.jpeg');
+    background-size: cover; /* La imagen se ajusta para cubrir todo el fondo */
+    background-position: center; /* La imagen se centra en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+
   }
   
   textarea, button {
@@ -25,8 +41,25 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
+    background-color: rgba(184, 180, 180, 0.5);
+
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    /*height: 100%; /* Ocupa el 100% de la altura del contenedor */
+    border: none; /* Quita el borde del textarea */
+    /*resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    /*padding: 5px; /* Ajusta el espacio interno dentro del textarea (opcional) */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+    /*font-size: 16px; /* Tamaño de fuente deseado */
+    /*line-height: 1.5; /* Altura de línea deseada */
+    
   }
-  
+
+  ::placeholder {
+    color: black; /* Cambia el color del placeholder a gris claro */
+    font-style: italic; /* Opcional: estilo de fuente itálica */
+  }
+
+   
   button {
     background-color: #007bff;
     color: #fff;
