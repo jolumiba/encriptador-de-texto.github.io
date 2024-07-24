@@ -75,7 +75,7 @@ textarea {
     min-height: 100%;
 
     resize: vertical; /* Permite redimensionamiento vertical */
-    overflow-y: scroll; /* Muestra barras de desplazamiento si es necesario */
+    overflow: auto; /* Muestra barras de desplazamiento si es necesario */
 
     border: 1px solid #ccc;
     padding: 10px;
