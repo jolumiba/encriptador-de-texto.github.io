@@ -8,14 +8,16 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1a1818;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
     background-image: url('fondo.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+
 }
 
 .titulo {
@@ -30,7 +32,7 @@ button {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
-    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    /*resize: none; /* Evita que el usuario pueda redimensionar el textarea */
     background-color: rgba(94, 148, 199, 1);
     color: #f3f3f3;
     cursor: pointer;
@@ -40,14 +42,20 @@ button {
     text-align: center; /* Centra el texto horizontalmente */
 }
 
+/*cambiar el color al pasar el cursor por el boton*/
+button:hover {
+    background-color: #0056b3;
+}
+
 .botones {
     display: flex;
 
-   /* flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
 
-    justify-content: space-between; /* Espacio entre botones */
+    /*justify-content: space-between; /* Espacio entre botones */
+    justify-content: space-around;
     align-items: center; /* Centra verticalmente los botones */
-    width: 120%; /* Ocupa todo el ancho disponible */
+    width: 100%; /* Ocupa todo el ancho disponible */
     margin-top: 10px; /* Espacio superior entre secciones */
 }
 
@@ -58,24 +66,28 @@ button {
     background-color: rgba(20, 82, 18, 0.5);
     border-radius: 5px;
     display: flex;
+    
     /*flex-direction: column; /* Alinea los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    gap: 10%; /* Espacio entre las secciones */
+    /*align-items: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espacio entre las secciones */
+    justify-content: space-between;
+   
 }
 
-.seccion_Ingreso {
-    width: 100%;
+.seccion_Ingreso, 
+.seccion_Salida {
+    width: 100%; /* Ajustado para ocupar todo el ancho en dispositivos pequeños */
 
     max-width: 600px; /* Mismo ancho máximo que la presentación */
     margin-top: 20px; /* Añadido espacio superior */
 }
 
 textarea {
-    width: 120%;
+    width: 100%;
     min-height: 100%;
 
     resize: vertical; /* Permite redimensionamiento vertical */
-    overflow: scroll; /* Muestra barras de desplazamiento si es necesario */
+    overflow-Y: auto; /* Muestra barras de desplazamiento si es necesario */
 
     border: 1px solid #ccc;
     padding: 10px;
@@ -91,10 +103,6 @@ textarea {
 
 }
 
-/*cambiar el color al pasar el cursor por el boton*/
-button:hover {
-    background-color: #0056b3;
-}
 
 footer{
     background-color: #1a1818;
@@ -105,27 +113,25 @@ footer{
 
     width: 100%; /* Ocupa todo el ancho disponible */
     text-align: center; /* Centra el texto horizontalmente */
-    padding: 10px 0; /* Añadido espaciado interior */
+    padding: 1%; /* Añadido espaciado interior */
+    /*position: absolute;*/
+    
 }
 
 /* Media query para dispositivos con ancho máximo de 1200px */
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .presentacion {
         flex-direction: column; /* Cambia a columna para dispositivos pequeños */
         align-items: stretch; /* Ajusta los elementos a lo largo del eje principal */
     }
 
-    .seccion_Ingreso {
+   /* .seccion_Ingreso {
         width: 100%; /* Ajusta el ancho completo en dispositivos pequeños */
-        margin-top: 20px; /* Añade espacio superior */
-    }
+       /* margin-top: 20px; /* Añade espacio superior */
+    /*} */
 
     .titulo {
-        font-size: 100%;
+        font-size: 1.5rem;
     }
 
-    footer {
-        font-size: 0.6rem; /* Opcional: tamaño de fuente para textarea */
-        /*width: 100%; /* Ocupa todo el ancho disponible */
-    }
 }

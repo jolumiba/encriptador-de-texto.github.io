@@ -5,24 +5,14 @@ function validar__Texto(texto) {
     return regex.test(texto);
 }
 
-function mostrar__Error(message) {
-    document.getElementById("mensaje_Error").textContent = message;
-}
-
-function limpiar__Error() {
-    document.getElementById("mensaje_Error").textContent = "";
-}
-
-
 function encriptar__Texto() {
     var texto = document.getElementById("ingreso_Texto").value;
     
     if (!validar__Texto(texto)) {
-        mostrar__Error("El texto solo debe contener letras minúsculas y espacios...");
+        alert("El texto solo debe contener letras minúsculas y espacios...");
         return;
     }
-    limpiar__Error();
-
+    
     // Se pasa el texto ingresado a la variable output para reemplazar las vocales de acuerdo
     // a lo requerido por el encriptado
 
@@ -33,7 +23,6 @@ function encriptar__Texto() {
         .replace(/o/g, "ober")
         .replace(/u/g, "ufat");
     document.getElementById("salida_Texto").value = output;
-
 }
   
 function desencriptar__Texto() {
@@ -47,8 +36,7 @@ function desencriptar__Texto() {
         .replace(/ober/g, "o")
         .replace(/ufat/g, "u");
     document.getElementById("salida_Texto").value = output;
-
-  }
+}
   
 function copiar__Texto() {
     var output = document.getElementById("salida_Texto");
@@ -56,5 +44,5 @@ function copiar__Texto() {
     output.setSelectionRange(0, 99999); /* para dispositivos móviles */
     document.execCommand("copy");
     alert("Texto copiado: " + output.value);
-  }
+}
   
